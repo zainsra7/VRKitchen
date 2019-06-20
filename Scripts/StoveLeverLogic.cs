@@ -3,15 +3,21 @@ using UnityEngine.UI;
 using VRTK.Controllables;
 
 
-/* Sugar Logic class
+/* Stove lever Logic class
  * Cloning the sugarcube: Record starting position and current position and if the offset in x & y axis is more than the threshold,
  * create a clone of the cube at the starting position
  */
-public class SugarLeverLogic : MonoBehaviour
+public class StoveLeverLogic : MonoBehaviour
 {
     public VRTK_BaseControllable controllable;
-    public string cubeType;
     public GameObject globalState;
+    public GameObject fire;
+    bool stoveOn = false;
+
+
+    public bool isStoveOn() {
+        return stoveOn;
+    }
 
     protected virtual void OnEnable()
     {
@@ -27,17 +33,13 @@ public class SugarLeverLogic : MonoBehaviour
 
     protected virtual void MaxLimitReached(object sender, ControllableEventArgs e)
     {
-            if (cubeType == "white")
-            {
-                globalState.GetComponent<GlobalLogic>().createWhiteSugarCube();
-            }
-            else if (cubeType == "brown")
-            {
-                globalState.GetComponent<GlobalLogic>().createBrownSugarCube();
-            }
+        fire.SetActive(true);
+        stoveOn = true;
     }
 
     protected virtual void MinLimitReached(object sender, ControllableEventArgs e)
     {
+        fire.SetActive(false);
+        stoveOn = false;
     }
 }
