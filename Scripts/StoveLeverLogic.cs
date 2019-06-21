@@ -11,6 +11,7 @@ public class StoveLeverLogic : MonoBehaviour
 {
     public VRTK_BaseControllable controllable;
     public GameObject globalState;
+    public Text displayText;
     public GameObject fire;
     bool stoveOn = false;
 
@@ -35,11 +36,13 @@ public class StoveLeverLogic : MonoBehaviour
     {
         fire.SetActive(true);
         stoveOn = true;
+        displayText.text = "ON";
     }
 
     protected virtual void MinLimitReached(object sender, ControllableEventArgs e)
     {
         fire.SetActive(false);
         stoveOn = false;
+        displayText.text = "OFF";
     }
 }

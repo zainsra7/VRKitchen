@@ -7,8 +7,7 @@ public class GlobalLogic : MonoBehaviour
     public GameObject whiteSugarCube;
     public GameObject brownSugarCube;
     public GameObject cup;
-    Vector3 whiteSugarPos;
-    Vector3 brownSugarPos;
+    public GameObject teapot;
     int lastWhiteCubes;
     int lastBrownCubes;
 
@@ -30,12 +29,9 @@ public class GlobalLogic : MonoBehaviour
             lastBrownCubes = currentBrownCubes;
         }
     }
-
     // Start is called before the first frame update
     void Start()
     {
-        whiteSugarPos = whiteSugarCube.transform.position;
-        brownSugarPos = brownSugarCube.transform.position;
         lastBrownCubes = 0;
         lastWhiteCubes = 0;
     }
