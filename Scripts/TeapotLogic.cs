@@ -14,9 +14,7 @@ public class TeapotLogic : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Collision with: " + other.gameObject.tag);
         if (other.gameObject.CompareTag("Water")){
-            //globalData.GetComponent<GlobalLogic>().pourWaterinPot();
             containsWater = true;
             waterContainer.SetActive(true);
             updateStatus();
@@ -25,11 +23,12 @@ public class TeapotLogic : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Fire") && containsWater && !waterBoiled){
-            Debug.Log("Teapot collided with fire");
             countCollisionWithFire++;
+            globalData.GetComponent<GlobalLogic>().IncrementStoveTimer(countCollisionWithFire);
             if (countCollisionWithFire == 1000) {
                 waterBoiled = true;
                 updateStatus();
+                globalData.GetComponent<GlobalLogic>().stopTimer();
             }
         }
     }
@@ -42,7 +41,7 @@ public class TeapotLogic : MonoBehaviour
         }
         else if(containsWater)
         {
-            display += "water!";
+            display += "cold water!";
         }
         teapotStatus.text = display;
     }
