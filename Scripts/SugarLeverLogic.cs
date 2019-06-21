@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using VRTK.Controllables;
-
-
-/* Sugar Logic class
- * Cloning the sugarcube: Record starting position and current position and if the offset in x & y axis is more than the threshold,
- * create a clone of the cube at the starting position
+/*
+ * Contains logic for sugar lever
+ * Is responsible for
+ *  Cloning/Creating white/brown sugar cube (by calling GlobalLogic)
+ * Created by @zainsra7
  */
 public class SugarLeverLogic : MonoBehaviour
 {

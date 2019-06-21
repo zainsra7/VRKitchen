@@ -1,18 +1,18 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using VRTK.Controllables;
-
-
-/* Stove lever Logic class
- * Cloning the sugarcube: Record starting position and current position and if the offset in x & y axis is more than the threshold,
- * create a clone of the cube at the starting position
+/*
+ * Contains logic for sink lever
+ * Is responsible for
+ *  Animating water from tap (turning tap on/off)
+ * Created by @zainsra7
  */
 public class SinkLeverLogic : MonoBehaviour
 {
     public VRTK_BaseControllable controllable;
     public GameObject globalState;
-    public Text displayText;
     public GameObject water;
+    public Text displayText;
     bool tapOn = false;
 
 
@@ -21,6 +21,7 @@ public class SinkLeverLogic : MonoBehaviour
         return tapOn;
     }
 
+    //Functions of "Controllable Reactor" Script from VRTK3
     protected virtual void OnEnable()
     {
         controllable = (controllable == null ? GetComponent<VRTK_BaseControllable>() : controllable);

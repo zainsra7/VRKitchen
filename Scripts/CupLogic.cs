@@ -2,7 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+/*
+ * Contains logic for cup 
+ * Is responsible for
+ * 1) Updating the onScreen cup status
+ * 2) Checking collision with water
+ * 3) Checking collision with white/brown sugar cube
+ * 4) Checking collision with milk
+ * Created by @zainsra7
+ */
 public class CupLogic : MonoBehaviour
 {
     public GameObject globalState;
@@ -127,6 +135,7 @@ public class CupLogic : MonoBehaviour
             cupStatus.text = display;
         }
     }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -136,7 +145,6 @@ public class CupLogic : MonoBehaviour
         containsBoiledWater = false;
         containsWater = false;
     }
-
     // Update is called once per frame
     void Update()
     {

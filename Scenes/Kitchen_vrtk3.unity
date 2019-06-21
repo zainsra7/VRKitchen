@@ -648,6 +648,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 108934075}
   m_CullTransparentMesh: 0
+--- !u!114 &118567062 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114676128360407342, guid: 3d56870ea5ab696448e35ecae56a6c5e,
+    type: 3}
+  m_PrefabInstance: {fileID: 2084081277}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &120032869
 GameObject:
   m_ObjectHideFlags: 0
@@ -6014,8 +6026,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controllable: {fileID: 227749112}
   globalState: {fileID: 1324553162}
-  displayText: {fileID: 1410909008}
   fire: {fileID: 619481015}
+  displayText: {fileID: 1410909008}
 --- !u!114 &227749112 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 575700590229499500, guid: 3f54bf8b06c88724cb37cf9c646db404,
@@ -7582,6 +7594,11 @@ PrefabInstance:
       propertyPath: teapotStatus
       value: 
       objectReference: {fileID: 903519034}
+    - target: {fileID: 2734929257538059266, guid: 463c1a9d608c34a468d46133f280b982,
+        type: 3}
+      propertyPath: waitMilliseconds
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 479302405046167490, guid: 463c1a9d608c34a468d46133f280b982,
         type: 3}
       propertyPath: m_IsActive
@@ -9518,7 +9535,7 @@ GameObject:
   m_Component:
   - component: {fileID: 858817538}
   m_Layer: 0
-  m_Name: '[ExampleScene_Scripts] (1)'
+  m_Name: '[ExampleScene_Scripts]'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10203,6 +10220,12 @@ MonoBehaviour:
   gripSenseAxisChanged: 0
   gripSensePressed: 0
   controllerVisible: 1
+--- !u!1 &993055632 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1016562814490302, guid: 3d56870ea5ab696448e35ecae56a6c5e,
+    type: 3}
+  m_PrefabInstance: {fileID: 2084081277}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &994333723
 GameObject:
   m_ObjectHideFlags: 0
@@ -10939,7 +10962,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1102311825}
   m_Layer: 0
-  m_Name: '[Tutorial_Text] (1)'
+  m_Name: '[Tutorial_Text]'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16601,10 +16624,14 @@ MonoBehaviour:
     type: 3}
   cup: {fileID: 108815692}
   teapot: {fileID: 477243869}
-  requiredWhiteSugar: 1
-  requiredBrownSugar: 1
+  stove: {fileID: 227749108}
+  sink: {fileID: 2043422603}
+  mistakesBoard: {fileID: 993055632}
   stoveTimer: {fileID: 268999784}
   teaCompletionText: {fileID: 1679037826}
+  mistakes: {fileID: 118567062}
+  requiredWhiteSugar: 3
+  requiredBrownSugar: 1
 --- !u!4 &1324553164
 Transform:
   m_ObjectHideFlags: 0
@@ -21715,6 +21742,11 @@ PrefabInstance:
       propertyPath: teapotStatus
       value: 
       objectReference: {fileID: 903519034}
+    - target: {fileID: 2734929257538059266, guid: 463c1a9d608c34a468d46133f280b982,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 479302405046167490, guid: 463c1a9d608c34a468d46133f280b982,
         type: 3}
       propertyPath: m_IsActive
@@ -21730,25 +21762,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Milk
       objectReference: {fileID: 0}
-    - target: {fileID: 481478631799390172, guid: 463c1a9d608c34a468d46133f280b982,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.349
-      objectReference: {fileID: 0}
     - target: {fileID: 524284072574389532, guid: 463c1a9d608c34a468d46133f280b982,
         type: 3}
       propertyPath: m_IsTrigger
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 479156326144050092, guid: 463c1a9d608c34a468d46133f280b982,
-        type: 3}
-      propertyPath: m_TagString
-      value: MilkJug
-      objectReference: {fileID: 0}
-    - target: {fileID: 479027693986261807, guid: 463c1a9d608c34a468d46133f280b982,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 478558921017905694, guid: 463c1a9d608c34a468d46133f280b982,
         type: 3}
@@ -21759,6 +21776,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Milk
+      objectReference: {fileID: 0}
+    - target: {fileID: 481478631799390172, guid: 463c1a9d608c34a468d46133f280b982,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.349
+      objectReference: {fileID: 0}
+    - target: {fileID: 479156326144050092, guid: 463c1a9d608c34a468d46133f280b982,
+        type: 3}
+      propertyPath: m_TagString
+      value: MilkJug
+      objectReference: {fileID: 0}
+    - target: {fileID: 479027693986261807, guid: 463c1a9d608c34a468d46133f280b982,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 500967909841121306, guid: 463c1a9d608c34a468d46133f280b982,
         type: 3}
@@ -22083,7 +22115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1548968097}
   m_Layer: 0
-  m_Name: '[VRTK_Scripts] (1)'
+  m_Name: '[VRTK_Scripts]'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23516,6 +23548,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1102311825}
     m_Modifications:
+    - target: {fileID: 114676128360407342, guid: 3d56870ea5ab696448e35ecae56a6c5e,
+        type: 3}
+      propertyPath: m_Text
+      value: 'Your task: Make a cup of white tea by following given instructions:
+
+
+        - Grab and add 3 white and 1 brown sugar cube and a tea bag in the cup
+
+        - Grab pot and add water into it from the sink
+
+        - Put pot on the stove
+
+        - Turn on the stove
+
+        - Wait till the water is boiling
+
+        - Pour water from pot into the cup
+
+        - Grab milk and pour into the cup'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114676128360407342, guid: 3d56870ea5ab696448e35ecae56a6c5e,
+        type: 3}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114676128360407342, guid: 3d56870ea5ab696448e35ecae56a6c5e,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 46
+      objectReference: {fileID: 0}
     - target: {fileID: 224401778520816142, guid: 3d56870ea5ab696448e35ecae56a6c5e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23605,36 +23667,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114676128360407342, guid: 3d56870ea5ab696448e35ecae56a6c5e,
-        type: 3}
-      propertyPath: m_Text
-      value: 'Your task: Make a cup of white tea by following given instructions:
-
-
-        - Grab and add 1 white and 1 brown sugar cube and a tea bag in the cup
-
-        - Grab pot and add water into it from the sink
-
-        - Put pot on the stove
-
-        - Turn on the stove
-
-        - Wait till the water is boiling
-
-        - Pour water from pot into the cup
-
-        - Grab milk and pour into the cup'
-      objectReference: {fileID: 0}
-    - target: {fileID: 114676128360407342, guid: 3d56870ea5ab696448e35ecae56a6c5e,
-        type: 3}
-      propertyPath: m_FontData.m_VerticalOverflow
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114676128360407342, guid: 3d56870ea5ab696448e35ecae56a6c5e,
-        type: 3}
-      propertyPath: m_FontData.m_FontSize
-      value: 46
       objectReference: {fileID: 0}
     - target: {fileID: 224044212099514402, guid: 3d56870ea5ab696448e35ecae56a6c5e,
         type: 3}
@@ -23857,7 +23889,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1718863802
 RectTransform:
   m_ObjectHideFlags: 0
@@ -25850,8 +25882,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controllable: {fileID: 2043422604}
   globalState: {fileID: 1324553162}
-  displayText: {fileID: 2043422602}
   water: {fileID: 120032869}
+  displayText: {fileID: 2043422602}
 --- !u!1001 &2054698246
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26070,6 +26102,233 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1003348481}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2084081277
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1016562814490302, guid: 3d56870ea5ab696448e35ecae56a6c5e, type: 3}
+      propertyPath: m_Name
+      value: MistakesCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1016562814490302, guid: 3d56870ea5ab696448e35ecae56a6c5e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114676128360407342, guid: 3d56870ea5ab696448e35ecae56a6c5e,
+        type: 3}
+      propertyPath: m_Text
+      value: '""'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114676128360407342, guid: 3d56870ea5ab696448e35ecae56a6c5e,
+        type: 3}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114676128360407342, guid: 3d56870ea5ab696448e35ecae56a6c5e,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 46
+      objectReference: {fileID: 0}
+    - target: {fileID: 224401778520816142, guid: 3d56870ea5ab696448e35ecae56a6c5e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224401778520816142, guid: 3d56870ea5ab696448e35ecae56a6c5e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224401778520816142, guid: 3d56870ea5ab696448e35ecae56a6c5e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.212
+      objectReference: {fileID: 0}
+    - target: {fileID: 224401778520816142, guid: 3d56870ea5ab696448e35ecae56a6c5e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.38268343
+      objectReference: {fileID: 0}
+    - target: {fileID: 224401778520816142, guid: 3d56870ea5ab696448e35ecae56a6c5e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224401778520816142, guid: 3d56870ea5ab696448e35ecae56a6c5e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224401778520816142, guid: 3d56870ea5ab696448e35ecae56a6c5e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.92387956
+      objectReference: {fileID: 0}
+    - target: {fileID: 224401778520816142, guid: 3d56870ea5ab696448e35ecae56a6c5e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 224401778520816142, guid: 3d56870ea5ab696448e35ecae56a6c5e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224401778520816142, guid: 3d56870ea5ab696448e35ecae56a6c5e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.435
+      objectReference: {fileID: 0}
+    - target: {fileID: 224401778520816142, guid: 3d56870ea5ab696448e35ecae56a6c5e,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 224401778520816142, guid: 3d56870ea5ab696448e35ecae56a6c5e,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 700
+      objectReference: {fileID: 0}
+    - target: {fileID: 224401778520816142, guid: 3d56870ea5ab696448e35ecae56a6c5e,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224401778520816142, guid: 3d56870ea5ab696448e35ecae56a6c5e,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224401778520816142, guid: 3d56870ea5ab696448e35ecae56a6c5e,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224401778520816142, guid: 3d56870ea5ab696448e35ecae56a6c5e,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224401778520816142, guid: 3d56870ea5ab696448e35ecae56a6c5e,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224401778520816142, guid: 3d56870ea5ab696448e35ecae56a6c5e,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224401778520816142, guid: 3d56870ea5ab696448e35ecae56a6c5e,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.0012
+      objectReference: {fileID: 0}
+    - target: {fileID: 224401778520816142, guid: 3d56870ea5ab696448e35ecae56a6c5e,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.0012
+      objectReference: {fileID: 0}
+    - target: {fileID: 224401778520816142, guid: 3d56870ea5ab696448e35ecae56a6c5e,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.0012
+      objectReference: {fileID: 0}
+    - target: {fileID: 224044212099514402, guid: 3d56870ea5ab696448e35ecae56a6c5e,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 224044212099514402, guid: 3d56870ea5ab696448e35ecae56a6c5e,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 224371738333264858, guid: 3d56870ea5ab696448e35ecae56a6c5e,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 750
+      objectReference: {fileID: 0}
+    - target: {fileID: 224339459913635852, guid: 3d56870ea5ab696448e35ecae56a6c5e,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 700
+      objectReference: {fileID: 0}
+    - target: {fileID: 224339459913635852, guid: 3d56870ea5ab696448e35ecae56a6c5e,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224339459913635852, guid: 3d56870ea5ab696448e35ecae56a6c5e,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224339459913635852, guid: 3d56870ea5ab696448e35ecae56a6c5e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224339459913635852, guid: 3d56870ea5ab696448e35ecae56a6c5e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.000014901161
+      objectReference: {fileID: 0}
+    - target: {fileID: 224339459913635852, guid: 3d56870ea5ab696448e35ecae56a6c5e,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224339459913635852, guid: 3d56870ea5ab696448e35ecae56a6c5e,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224339459913635852, guid: 3d56870ea5ab696448e35ecae56a6c5e,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224339459913635852, guid: 3d56870ea5ab696448e35ecae56a6c5e,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114404080296554676, guid: 3d56870ea5ab696448e35ecae56a6c5e,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.20990565
+      objectReference: {fileID: 0}
+    - target: {fileID: 114404080296554676, guid: 3d56870ea5ab696448e35ecae56a6c5e,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.34528303
+      objectReference: {fileID: 0}
+    - target: {fileID: 114404080296554676, guid: 3d56870ea5ab696448e35ecae56a6c5e,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114895536319132594, guid: 3d56870ea5ab696448e35ecae56a6c5e,
+        type: 3}
+      propertyPath: m_Text
+      value: <b>Mistakes Board</b>
+      objectReference: {fileID: 0}
+    - target: {fileID: 114895536319132594, guid: 3d56870ea5ab696448e35ecae56a6c5e,
+        type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114895536319132594, guid: 3d56870ea5ab696448e35ecae56a6c5e,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3d56870ea5ab696448e35ecae56a6c5e, type: 3}
 --- !u!1 &2088971982
 GameObject:
   m_ObjectHideFlags: 0
@@ -26249,7 +26508,7 @@ GameObject:
   - component: {fileID: 2105197354}
   - component: {fileID: 2105197353}
   m_Layer: 0
-  m_Name: '[VRTK_SDKManager] (1)'
+  m_Name: '[VRTK_SDKManager]'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

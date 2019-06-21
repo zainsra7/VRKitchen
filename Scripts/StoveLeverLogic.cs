@@ -1,25 +1,25 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using VRTK.Controllables;
-
-
-/* Stove lever Logic class
- * Cloning the sugarcube: Record starting position and current position and if the offset in x & y axis is more than the threshold,
- * create a clone of the cube at the starting position
+/*
+ * Contains logic for stove lever
+ * Is responsible for
+ *  Animating fire on stove (turning stove on/off)
+ * Created by @zainsra7
  */
 public class StoveLeverLogic : MonoBehaviour
 {
     public VRTK_BaseControllable controllable;
     public GameObject globalState;
-    public Text displayText;
     public GameObject fire;
+    public Text displayText;
     bool stoveOn = false;
-
 
     public bool isStoveOn() {
         return stoveOn;
     }
 
+    //Functions of "Controllable Reactor" Script from VRTK3
     protected virtual void OnEnable()
     {
         controllable = (controllable == null ? GetComponent<VRTK_BaseControllable>() : controllable);
